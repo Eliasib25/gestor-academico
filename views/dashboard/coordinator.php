@@ -10,26 +10,24 @@
 <body class="bg-light">
     <div class="container mt-5"> 
         <h2 class="">Bienvenido coordinador <?php echo $_SESSION["user"];  ?> </h2>
-        <p class="text-muted">Aquí puedes gestionar las actividades de los profesores y alumnos.</p>
+        <p class="text-muted">Aquí puedes gestionar todas las funcionalidades de tu rol</p>
         <div class="mt-4">
             <h3>Opciones disponibles:</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <a href="manage_teachers.php" class="text-decoration-none">Gestionar profesores</a>
+                    <a href="../viewscoordinator/managmentGrade.php" class="text-decoration-none">Gestionar grados</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="manage_students.php" class="text-decoration-none">Gestionar alumnos</a>
+                    <a href="../viewscoordinator/managmentSubjects.php" class="text-decoration-none">Gestionar asignaturas</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="view_reports.php" class="text-decoration-none">Ver informes</a>
+                    <a href="../viewscoordinator/managmentTeacher.php" class="text-decoration-none">Gestionar profesores</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="settings.php" class="text-decoration-none">Configuración</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="../../controllers/AuthController.php?logout=true" class="text-decoration-none">Cerrar sesión</a>
+                    <a href="../viewscoordinator/managmentStudent.php" class="text-decoration-none">Gestionar estudiantes</a>
                 </li>
             </ul>
+            <button class="btn btn-danger mt-3" onclick="window.location.href='../auth/login.php'">Cerrar sesión</button>
     </div>
 
 </body>
