@@ -37,10 +37,12 @@
                 
                 $userId= $userResult->fetch_assoc();
 
-                $resultTeaher = $teacher->save($identificationNumber, $identificationType, $names, $lastnames, $dateBorn, $phoneNumber, $email, $userId["id"]);
+                $teacherResult = $teacher->save($identificationNumber, $identificationType, $names, $lastnames, $dateBorn, $phoneNumber, $email, $userId["id"]);
 
-                if ($resultTeacher == "success" && $resultUser == "success") {
-                    echo "<script>window.location.href = '../views/viewscoordinator/managmentTeacher/registerTeacher.php';</script>";
+                if ($teacherResult == "success" && $resultUser == "success") {
+                    echo "<script>
+                    alert('Profesor registrado exitosamente');
+                    window.location.href = '../views/viewscoordinator/managmentTeacher/registerTeacher.php';</script>";
                 }
 
              } else {

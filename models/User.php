@@ -15,9 +15,7 @@
                 $sql = "INSERT INTO ".$this->table. " VALUES (?, ?, ?, ?)";
                 $statement = $this->getconexion()->prepare($sql);
                 $statement->bind_param("isss", $id, $user, $password, $role);
-                $statement->execute();
-                $result = $statement->get_result();
-                if ($statement->num_rows == 1) {
+                if ($statement->execute()) {
                     return "success";
                 } else {
                     return "error";
