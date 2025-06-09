@@ -21,6 +21,7 @@
                 header("Location: ../views/dashboard/coordinator.php");
             } else if($result["role"] == "secretary"){
                header("Location: ../views/viewsecretary/managmentStudent.php");
+               
             }
         } else {
             echo "<script>alert('Usuario o contraseña incorrectos');</script>";
