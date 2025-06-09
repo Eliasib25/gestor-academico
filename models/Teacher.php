@@ -6,29 +6,32 @@
 
         private $table = "teachers";
 
-        public function save($identificationType, $identificationNumber, $name, $lastname, $dateBorn, $numberPhone, $email, $passowrd, $confirmPassword, $userId){
+        public function save($identificationNumber, $identificationType,$name, $lastname, $dateBorn, $numberPhone, $email, $userId){
 
-            // Validar si el número de identificación ya existe
-            $sqlCheck = "SELECT 1 FROM ". $this->table. " WHERE identification_number = ?";
-            $stmtCheck = $this->getconexion()->prepare($sqlCheck);
-            $stmtCheck->bind_param("s", $identificationNumber);
-            $stmtCheck->execute();
-            $resultCheck = $stmtCheck->get_result();
-
-            if ($resultCheck->num_rows > 0) {
-                return "duplicate_identification"; // Número de identificación ya existe
-            } else {
                 // Insertar nuevo registro
-                $sqlInsert = "INSERT INTO ".$this->table. " (identification_type, identification_number, name, lastname, date_born, number_phone, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $sqlInsert = "INSERT INTO ".$this->table. " (identification, identificationType, name, lastname, dateBorn, phone, email, userId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmtInsert = $this->getconexion()->prepare($sqlInsert);
-                $stmtInsert->bind_param("ssssssss", $identificationType, $identificationNumber, $name, $lastname, $dateBorn, $numberPhone, $email, password_hash($passowrd, PASSWORD_DEFAULT), $userId);
+                $stmtInsert->bind_param("ssssssss",$identificationNumber, $identificationType, $name, $lastname, $dateBorn, $numberPhone, $email, $userId);
                 if ($stmtInsert->execute()) {
                     return "success"; // Registro exitoso
                 } else {
                     return "error"; // Error al insertar
                 }
-            }
 
+        }
+
+        public function searchTeacher($identificationNumber, $identificationType){
+            $sqlCheck = "SELECT 1 FROM ". $this->table. " WHERE identification = ? AND identificationType = ?";
+            $stmtCheck = $this->getconexion()->prepare($sqlCheck);
+            $stmtCheck->bind_param("ss", $identificationNumber, $identificationType);
+            $stmtCheck->execute();
+            $resultCheck = $stmtCheck->get_result();
+
+            if ($resultCheck->num_rows > 0) {
+                return "teacherExist";
+            } else {
+                return "teacherNotFound";
+            }
         }
 
 

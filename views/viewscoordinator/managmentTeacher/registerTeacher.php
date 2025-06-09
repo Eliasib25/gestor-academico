@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,11 @@
     <div class="container mt-5">
         <div>
             <div class="text-start mt-4">
-                <a href="../" class="btn btn-secondary">Regresar</a>
+                <a href="../managmentTeacher.php" class="btn btn-secondary">Regresar</a>
             </div>
             <h2 class="text-center">Registrar profesor</h2>
             <p class="text-muted text-center">Aquí puedes registrar nuevos profesores para la institución.</p>
-            <form class="w-50 mx-auto" action="../../controllers/RegisterTeacherController.php" method="POST">
+            <form class="w-50 mx-auto" action="../../../controllers/RegisterTeacherController.php" method="POST">
                 <div class="mb-3">
                     <label for="identificationType" class="form-label"></label>Tipo de identificación</label>
                     <select class="form-select" id="identificationType" name="identificationType" required>
