@@ -1,6 +1,6 @@
 <?php 
 
-require_once("../components/conectmysql.php");
+require_once(__DIR__ . "/../components/conectmysql.php");
 
 Class Grade extends ConectarMysql {
     private $table = "grades";
@@ -34,4 +34,16 @@ Class Grade extends ConectarMysql {
             return "success"; // Registro exitoso
         }
     }
+
+    public function searchAll(){
+            $sql = "SELECT * FROM ".$this->table;
+            $statement = $this->getconexion()->prepare($sql);
+
+            if ($statement->execute()){
+                return $statement->get_result();
+            } else {
+                return "error: ".$statement->error;
+            }
+
+        }
 }

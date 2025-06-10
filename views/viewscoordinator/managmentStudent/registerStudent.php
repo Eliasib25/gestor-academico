@@ -50,13 +50,23 @@
                 <div class="mb-3">
                     <label for="grade" class="form-label">Grado a cursar</label>
                     <select class="form-select" id="grade" name="grade" required>
-                        <option value="" disabled selected>Seleccione un grado</option>
-                        <?php
-                        // Aquí va el código para obtener la lista de grados desde la base de datos
+                        <option  value="" disabled selected>Seleccione un grado</option>
+                        <?php 
+                        require_once("../../../models/Grade.php");
+
+                        $grade = new Grade();
+
+                        $result = $grade->searchAll();
+
+                        if (is_string($result)){
+                            echo $result; //Se muestra el código de error
+                        } else {
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='{$row['id']}' >{$row['name']} - {$row['journey']}</option>";
+                            }
+                        }
+                        
                         ?>
-                        <option value="1">Grado 1</option>
-                        <option value="2">Grado 2</option>
-                        <option value="3">Grado 3</option>
                     </select>
                 </div>
 
