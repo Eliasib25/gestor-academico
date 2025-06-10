@@ -1,21 +1,21 @@
 <?php 
 
-    require_once("../components/conectmysql.php");
+    require_once(__DIR__ . "/../components/conectmysql.php");
 
-     Class Teacher extends ConectarMysql {
+    Class Teacher extends ConectarMysql {
 
         private $table = "teachers";
 
         public function save($identificationNumber, $identificationType,$name, $lastname, $dateBorn, $numberPhone, $email, $userId){
 
-                // Insertar nuevo registro
+                
                 $sqlInsert = "INSERT INTO ".$this->table. " (identification, identificationType, name, lastname, dateBorn, phone, email, userId) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmtInsert = $this->getconexion()->prepare($sqlInsert);
                 $stmtInsert->bind_param("ssssssss",$identificationNumber, $identificationType, $name, $lastname, $dateBorn, $numberPhone, $email, $userId);
                 if ($stmtInsert->execute()) {
-                    return "success"; // Registro exitoso
+                    return "success";
                 } else {
-                    return "error"; // Error al insertar
+                    return "error"; 
                 }
 
         }
@@ -34,7 +34,42 @@
             }
         }
 
+        public function searchAll(){
+            $sql = "SELECT * FROM ".$this->table;
+            $statement = $this->getconexion()->prepare($sql);
+
+            if ($statement->execute()){
+                return $statement->get_result();
+            } else {
+                return "error: ".$statement->error;
+            }
+
+        }
+
+        public function updateTeacher($identificationNumber, $identificationType, $name, $lastname, $dateBorn, $numberPhone, $email, $userId) {
+            $sql = "UPDATE " . $this->table . " SET name = ?, lastname = ?, dateBorn = ?, phone = ?, email = ?, userId = ? 
+                    WHERE identification = ? AND identificationType = ?";
+            $stmt = $this->getconexion()->prepare($sql);
+            $stmt->bind_param("ssssssis", $name, $lastname, $dateBorn, $numberPhone, $email, $userId, $identificationNumber, $identificationType);
+            $stmt->execute();
+        }
+
+        public function obtenerUserId($username) {
+            $sql = "SELECT id FROM users WHERE user = ?";
+            $stmt = $this->getconexion()->prepare($sql);
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            if ($fila = $resultado->fetch_assoc()) {
+                return $fila['id'];
+            }
+        return null;
+        }   
+
+
+
 
     }
+    
 
 ?>

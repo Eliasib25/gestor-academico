@@ -23,5 +23,8 @@
                 <li class="list-group-item">
                     <a href="managmentTeacher/academicLoad.php" class="text-decoration-none">Asignar carga académica</a>
                 </li>
+                <li class="list-group-item">
+                    <a href="managmentTeacher/listTeacher.php" class="text-decoration-none">Listar profesores</a>
+                </li>
 </body>
 </html>
