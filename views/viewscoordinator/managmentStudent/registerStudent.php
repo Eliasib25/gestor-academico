@@ -59,10 +59,6 @@
                         <option value="3">Grado 3</option>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label for="photo" class="form-label">Foto estudiante</label>
-                    <input type="file" class="form-control" id="photo" name="photo" accept="image/*" required>
-                </div>
 
                 <h4 class="text-center">Datos del acudiente</h4>
                 <div class="mb-3">
