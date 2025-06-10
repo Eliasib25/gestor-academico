@@ -21,11 +21,11 @@
             </div>
             <div class="mb-3">
                 <label for="gradeName" class="form-label">Seleccione la jornada</label>
-                     <select class="form-select" id="journey" name="journey" required>
+                    <select class="form-select" id="journey" name="journey" required>
                         <option value="" disabled selected>Seleccione una jornada</option>
                         <option value="morning">Mañana</option>
                         <option value="afternoon">Tarde</option>
-                     </select>
+                    </select>
             </div>
             <div class="mb-3">
                 <label for="classroom" class="form-label">Aula</label>

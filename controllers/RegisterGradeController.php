@@ -26,6 +26,6 @@ if (isset($_POST["registerGrade"])) {
     }
 
     // Redirigir siempre al formulario
-    echo "<script>window.location.href = '../views/viewscoordinator/managmentGrade.php';</script>";
+    echo "<script>window.location.href = '../views/viewscoordinator/managmentGrade/registerGrade.php';</script>";
 
 }

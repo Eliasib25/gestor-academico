@@ -21,7 +21,7 @@
                         <a href="managmentGrade/registerGrade.php" class="text-decoration-none">Registrar grado</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="" class="text-decoration-none">Listado de grados</a> 
+                        <a href="managmentGrade/listGrade.php" class="text-decoration-none">Listado de grados</a> 
                     </li>
                 </ul>
             </div>
