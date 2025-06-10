@@ -14,21 +14,20 @@
             </div>
             <h2 class="text-center">Registrar nuevo estudiante</h2>
             <p class="text-muted text-center">Completa el formulario para registrar un nuevo estudiante</p>
-            <form class="w-50 mx-auto" action="../../controllers/StudentController.php" method="POST">
+            <form class="w-50 mx-auto" action="../../../controllers/RegisterStudentController.php" method="POST">
                 <h4 class="text-center">Datos del estudiante</h4>
                 <div class="mb-3">
                     <label for="identificationType" class="form-label">Tipo identificación</label>
                     <div class="input-group">
                         <select class="form-select" id="identificationType" name="identificationType" required>
                             <option value="" disabled selected>Seleccione un tipo de identificación</option>
-                            <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
-                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="RC">Registro civil</option>
                         </select>
                 </div>
                 </div>
                 <div class="mb-3">
-                    <label for="studentName" class="form-label">Número de identificación</label>
+                    <label for="studentIdentification" class="form-label">Número de identificación</label>
                     <input type="text" class="form-control" id="studentId" name="studentID" required>
                 </div>
                 <div class="mb-3">
@@ -45,7 +44,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="direction" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direction" name="direction" required>
+                    <input type="text" class="form-control" id="address" name="address" required>
                 </div>
                 <div class="mb-3">
                     <label for="grade" class="form-label">Grado a cursar</label>
@@ -65,7 +64,6 @@
                                 echo "<option value='{$row['id']}' >{$row['name']} - {$row['journey']}</option>";
                             }
                         }
-                        
                         ?>
                     </select>
                 </div>
