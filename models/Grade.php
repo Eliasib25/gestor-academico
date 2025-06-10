@@ -5,7 +5,7 @@ require_once(__DIR__ . "/../components/conectmysql.php");
 Class Grade extends ConectarMysql {
     private $table = "grades";
 
-     public function save($id, $gradeName = "", $journey = "", $classroom = "") {
+    public function save($id, $gradeName = "", $journey = "", $classroom = "") {
         // Verificar si ya existe el mismo grado en la misma jornada
         $sqlCheckGrade = "SELECT 1 FROM ". $this->table. " WHERE name = ? AND journey = ?";
         $stmtGrade = $this->getconexion()->prepare($sqlCheckGrade);
@@ -36,14 +36,22 @@ Class Grade extends ConectarMysql {
     }
 
     public function searchAll(){
-            $sql = "SELECT * FROM ".$this->table;
-            $statement = $this->getconexion()->prepare($sql);
+        $sql = "SELECT * FROM ".$this->table;
+        $statement = $this->getconexion()->prepare($sql);
 
-            if ($statement->execute()){
-                return $statement->get_result();
-            } else {
-                return "error: ".$statement->error;
-            }
-
+        if ($statement->execute()){
+            return $statement->get_result();
+        } else {
+            return "error: ".$statement->error;
         }
+
+    }
+
+    public function updateGrade($id, $name, $journey, $classroom) {
+        $sql = "UPDATE " . $this->table . " SET name = ?, journey = ?, classroom = ? WHERE id = ?";
+        $stmt = $this->getconexion()->prepare($sql);
+        $stmt->bind_param("sssi", $name, $journey, $classroom, $id);
+        $stmt->execute();
+    }
+    
 }
