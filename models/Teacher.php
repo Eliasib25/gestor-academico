@@ -64,11 +64,30 @@
                 return $fila['id'];
             }
         return null;
-        }   
+        } 
 
+        public function assignAcademicLoad($identification, $identificationType, $gradeId) {
 
+            $sql = "SELECT 1 FROM " . $this->table . " WHERE grades_id = ?";
+            $statement = $this->getconexion()->prepare($sql);
+            $statement->bind_param("i", $gradeId);
+            $statement->execute();
+            $result = $statement->get_result();
 
+            if ($result->num_rows >= 1) {
+                return "existGrade";
+            } else {
+                $sql = "UPDATE ".$this->table. " SET grades_id = ? WHERE identification = ? AND identificationType = ?";
+                $statement = $this->getconexion()->prepare($sql);
+                $statement->bind_param("iss", $gradeId, $identification,$identificationType);
+                if($statement->execute()){
+                    return "success";
+                } else {
+                    return "error: ".$statement->error;
+                }
+            }
 
+        }
     }
     
 

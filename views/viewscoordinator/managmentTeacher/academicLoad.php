@@ -13,28 +13,49 @@
                 <a href="../managmentTeacher.php" class="btn btn-secondary">Regresar</a>
             </div>
             <h2 class="text-center">Asignar carga académica</h2>
-            <p class="text-muted text-center">Aquí puedes asignar la carga académica a los profesores.</p>
-            <form class="w-50 mx-auto" action="../../controllers/AcademicLoadController.php" method="POST">
+            <p class="text-muted text-center">Aquí puedes asignar y editar la carga académica de los profesores.</p>
+            <form class="w-50 mx-auto" action="../../../controllers/AssignAcademicLoadController.php" method="POST">
                 <div class="mb-3">
-                    <label for="teacherId" class="form-label">Seleccionar profesor</label>
-                    <select class="form-select" id="teacherId" name="teacherId" required>
+                    <label for="teacher" class="form-label">Seleccionar profesor</label>
+                    <select class="form-select" id="teacher" name="teacher" required>
                         <option value="" disabled selected>Seleccione un profesor</option>
                         <?php
-                        //Aquí va el código para obtener la lista de profesores desde la base de datos
+                        require_once("../../../models/Teacher.php");
+
+                        $teacher = new Teacher();
+
+                        $result = $teacher->searchAll();
+                        
+                        if (is_string($result)){
+                            echo $result; //Se muestra el código de error
+                        } else {
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='{$row['identification']}-{$row['identificationType']}' >{$row['name']} {$row['lastname']}</option>";
+                            }
+                        }
+
+
                         ?>
-                        <option value="1">Profesor 1</option>
-                        <option value="2">Profesor 2</option>
-                        <option value="3">Profesor 3</option>
                     </select>
                     <label for="grade" class="form-label">Grado</label>
                     <select class="form-select" id="grade" name="grade" required>
                         <option value="" disabled selected>Seleccione un grado</option>
                         <?php
-                        //Aquí va el código para obtener la lista de grados desde la base de datos
+                        require_once("../../../models/Grade.php");
+
+                        $grade = new Grade();
+
+                        $result = $grade->searchAll();
+
+                        if (is_string($result)){
+                            echo $result; //Se muestra el código de error
+                        } else {
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='{$row['id']}' >{$row['name']} - {$row['journey']}</option>";
+                            }
+                        }
                         ?>
-                        <option value="1">Grado 1</option>
-                        <option value="2">Grado 2</option>
-                        <option value="3">Grado 3</option>
+                        
                     </select>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
