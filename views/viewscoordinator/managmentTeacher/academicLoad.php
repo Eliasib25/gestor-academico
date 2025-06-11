@@ -1,3 +1,13 @@
+<?php 
+
+require_once("../../../models/Teacher.php");
+
+$Teacher = new Teacher();
+$data = $Teacher->showAcademicLoad();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,13 +65,42 @@
                             }
                         }
                         ?>
-                        
                     </select>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     <button type="submit" class="btn btn-primary">Asignar carga académica</button>
                 </div>
         </form>
-    
+    </div>
+    <div class="container mt-5">
+    <h4 class="text-center">Carga académica de los profesores</h4>
+    <div class="container mt-3 d-flex justify-content-center">
+        <table class="table table-light table-bordered w-75">
+            <thead class="table-secondary text-center">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Grado asignado</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <?php 
+                    if (is_string($data)) {
+                        echo "<tr><td colspan='3'>{$data}</td></tr>";
+                    } else {
+                        while($row = $data->fetch_assoc()){
+                            $grado = $row['grade_name'] ? $row['grade_name'] . " - " . $row['journey'] : "Sin asignar";
+                            echo "<tr>
+                                    <td>{$row['name']}</td>
+                                    <td>{$row['lastname']}</td>
+                                    <td>{$grado}</td>
+                                </tr>";
+                        }
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

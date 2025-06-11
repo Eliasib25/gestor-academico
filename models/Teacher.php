@@ -88,7 +88,18 @@
             }
 
         }
+
+        public function showAcademicLoad(){
+            $sql = "SELECT t.name, t.lastname, g.name AS grade_name, g.journey FROM ". $this->table. " t LEFT JOIN grades g ON t.grades_id = g.id";
+            $statement = $this->getconexion()->prepare($sql);
+            if ($statement->execute()){
+                return $statement->get_result();
+            } else {
+                return "error: ".$statement->error;
+            }
+        }
     }
     
+
 
 ?>

@@ -21,10 +21,10 @@
                     <a href="managmentTeacher/registerTeacher.php" class="text-decoration-none">Registrar nuevo profesor</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="managmentTeacher/academicLoad.php" class="text-decoration-none">Asignar carga académica</a>
+                    <a href="managmentTeacher/listTeacher.php" class="text-decoration-none">Listar profesores</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="managmentTeacher/listTeacher.php" class="text-decoration-none">Listar profesores</a>
+                    <a href="managmentTeacher/academicLoad.php" class="text-decoration-none">Gestionar carga académica</a>
                 </li>
 </body>
 </html>
