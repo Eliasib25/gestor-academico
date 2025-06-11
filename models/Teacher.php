@@ -98,6 +98,20 @@
                 return "error: ".$statement->error;
             }
         }
+
+        public function searchTeacherByUserId($userId){
+            $sql = "SELECT identification, identificationType FROM ".$this->table . " WHERE userId = ?";
+            $statement = $this->getconexion()->prepare($sql);
+            $statement -> bind_param("i", $userId);
+            if ($statement->execute()){
+                $result = $statement->get_result();
+                return $result->fetch_assoc();
+            } else {
+                return "error: ". $statement->eror;
+            }
+
+        }
+
     }
     
 
