@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +23,8 @@
                 <label for="gradeName" class="form-label">Seleccione la jornada</label>
                     <select class="form-select" id="journey" name="journey" required>
                         <option value="" disabled selected>Seleccione una jornada</option>
-                        <option value="morning">Mañana</option>
-                        <option value="afternoon">Tarde</option>
+                        <option value="mañana">Mañana</option>
+                        <option value="tarde">Tarde</option>
                     </select>
             </div>
             <div class="mb-3">

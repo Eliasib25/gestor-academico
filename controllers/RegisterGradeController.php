@@ -13,13 +13,17 @@ if (isset($_POST["registerGrade"])) {
 
     switch ($result) {
         case "success":
-            echo "<script>alert('Grado registrado exitosamente');</script>";
+            echo "<script>alert('Grado registrado exitosamente');
+            </script>";
             break;
         case "duplicate_grade":
-            echo "<script>alert('Error: Ya existe un grado con el mismo nombre en esta jornada');</script>";
+            echo "<script>alert('Error: Ya existe un grado con el mismo nombre en esta jornada');
+            window.history.back();
+            </script>";
             break;
         case "duplicate_classroom":
-            echo "<script>alert('Error: El salón ya está ocupado en esta jornada');</script>";
+            echo "<script>alert('Error: El salón ya está ocupado en esta jornada');
+            window.history.back();</script>";
             break;
         default:
             echo "<script>alert('Error desconocido');</script>";
