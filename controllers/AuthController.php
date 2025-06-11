@@ -21,14 +21,12 @@
 
                 $teacher = new Teacher();
 
-                $result = $teacher->searchTeacherByUserId($_SESSION["id"]);
+                $result = $teacher->searchGradeTeacher($_SESSION["id"]);
 
                if (is_string($result)){
                    echo "<script>alert($result)</script>";
                 } else {
-                    $_SESSION["identificationTeacher"] = $result["identification"];
-                    $_SESSION["identificationTypeTeacher"] = $result["identificationType"];
-                    
+                    $_SESSION['gradesId'] = $result["grades_id"] ;   
                 }
 
                 header("Location: ../views/dashboard/teacher.php");

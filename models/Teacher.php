@@ -99,8 +99,8 @@
             }
         }
 
-        public function searchTeacherByUserId($userId){
-            $sql = "SELECT identification, identificationType FROM ".$this->table . " WHERE userId = ?";
+        public function searchGradeTeacher($userId){
+            $sql = "SELECT  grades_id FROM ".$this->table . " WHERE userId = ?";
             $statement = $this->getconexion()->prepare($sql);
             $statement -> bind_param("i", $userId);
             if ($statement->execute()){
