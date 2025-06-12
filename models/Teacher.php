@@ -112,6 +112,18 @@
 
         }
 
+        public function seacrhTeacherByUserId($userId){
+            $sql = "SELECT  * FROM ".$this->table . " WHERE userId = ?";
+            $statement = $this->getconexion()->prepare($sql);
+            $statement -> bind_param("i", $userId);
+            if ($statement->execute()){
+                $result = $statement->get_result();
+                return $result->fetch_assoc();
+            } else {
+                return "error: ". $statement->eror;
+            }
+        }
+
     }
     
 
