@@ -36,7 +36,7 @@
   <div class="container login-container">
     <div class="card w-100" style="max-width: 400px;">
       <div class="text-center">
-        <img src="../assets/academic.png" alt="Logo gestor académico" class="logo" />
+        <img src="../../public/assets/academic.png" alt="Logo gestor académico" class="logo" />
         <h2 class="mb-0">Gestor Académico</h2>
         <p class="text-muted">Inicio de sesión</p>
       </div>

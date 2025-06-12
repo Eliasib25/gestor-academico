@@ -35,7 +35,7 @@
         <a href="../viewscoordinator/managmentGrade.php" class="text-decoration-none text-dark">
           <div class="card card-hover shadow-sm text-center h-100">
             <div class="card-body">
-              <img src="../assets/grades.png" alt="Gestionar grados" width="60" class="mb-3">
+              <img src="../../public/assets/grades.png" alt="Gestionar grados" width="60" class="mb-3">
               <h6 class="card-title">Gestionar grados</h6>
             </div>
           </div>
@@ -46,7 +46,7 @@
         <a href="../viewscoordinator/managmentSubjects.php" class="text-decoration-none text-dark">
           <div class="card card-hover shadow-sm text-center h-100">
             <div class="card-body">
-              <img src="../assets/subject.png" alt="Gestionar asignaturas" width="60" class="mb-3">
+              <img src="../../public/assets/subject.png" alt="Gestionar asignaturas" width="60" class="mb-3">
               <h6 class="card-title">Gestionar asignaturas</h6>
             </div>
           </div>
@@ -57,7 +57,7 @@
         <a href="../viewscoordinator/managmentTeacher.php" class="text-decoration-none text-dark">
           <div class="card card-hover shadow-sm text-center h-100">
             <div class="card-body">
-              <img src="../assets/teacher.png" alt="Gestionar profesores" width="60" class="mb-3">
+              <img src="../../public/assets/teacher.png" alt="Gestionar profesores" width="60" class="mb-3">
               <h6 class="card-title">Gestionar profesores</h6>
             </div>
           </div>
@@ -68,7 +68,7 @@
         <a href="../viewscoordinator/managmentStudent.php" class="text-decoration-none text-dark">
           <div class="card card-hover shadow-sm text-center h-100">
             <div class="card-body">
-              <img src="../assets/students.png" alt="Gestionar estudiantes" width="60" class="mb-3">
+              <img src="../../public/assets/students.png" alt="Gestionar estudiantes" width="60" class="mb-3">
               <h6 class="card-title">Gestionar estudiantes</h6>
             </div>
           </div>
