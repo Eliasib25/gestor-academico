@@ -21,7 +21,7 @@
                         <a href="managmentStudent/registerStudent.php" class="text-decoration-none">Registrar estudiante</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="managmentStudent/academicLoad.php" class="text-decoration-none">Listado de estudiantes</a> 
+                        <a href="managmentStudent/listStudent.php" class="text-decoration-none">Listado de estudiantes</a> 
                     </li>
                 </ul>
             </div>

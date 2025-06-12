@@ -18,7 +18,10 @@
                 <h3>Opciones disponibles:</h3>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="managmentSubject/resgisterSubject.php" class="text-decoration-none">Registrar asignaturas</a>
+                        <a href="managmentSubject/registerSubject.php" class="text-decoration-none">Registrar asignaturas</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="managmentSubject/listSubject.php" class="text-decoration-none">Listar asignaturas</a>
                     </li>
                 </ul>
     </div>

@@ -8,8 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $classroom = $_POST['classroom'];
 
     $gradeModel = new Grade();
-    $gradeModel->updateGrade($id, $name, $journey, $classroom);
+    $result = $gradeModel->updateGrade($id, $name, $journey, $classroom);
 
-    header('Location: ../views/viewscoordinator/managmentGrade/listGrade.php');
+    if ($result === "duplicate_classroom") {
+        header('Location: ../views/viewscoordinator/managmentGrade/editGrade.php?id=' . $id . '&error=aula_ocupada');
+        exit;
+    }
+
+    header('Location: ../views/viewscoordinator/managmentGrade/listGrade.php?success=1');
     exit;
 }
