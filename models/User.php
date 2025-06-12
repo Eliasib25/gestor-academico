@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../components/connectmysql.php");
+    require_once("../components/conectmysql.php");
 
     Class User extends ConectarMysql {
 
