@@ -125,7 +125,7 @@
     <script>
          // Función para deshabilitar el botón si no hay asignaturas
         function disableButtonIfNoSubjects() {
-            var select = document.getElementById('subjectName');
+            var select = document.getElementById('subjectID');
             var submitButton = document.getElementById('registerNote');
             
             // Si no hay opciones disponibles en el select, deshabilitar el botón
