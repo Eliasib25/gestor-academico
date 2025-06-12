@@ -1,9 +1,9 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
 
-echo "Cargando controlador...<br>";
+// echo "Cargando controlador...<br>";
 require_once(__DIR__ . "/../../../models/Grade.php");
 
 // Obtener todos grados
@@ -12,7 +12,7 @@ require_once(__DIR__ . "/../../../models/Grade.php");
 $gradeModel = new Grade();
 $grades = $gradeModel->searchAll();
 
-echo "Grados cargados: " . ($grades ? "sí" : "no") . "<br>";
+// echo "Grados cargados: " . ($grades ? "sí" : "no") . "<br>";
 
 $gradesList = [];
 while ($row = $grades->fetch_assoc()) {
