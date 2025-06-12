@@ -10,12 +10,13 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
+        <div class="text-start mt-4">
+                    <a href="../managmentNote.php" class="btn btn-secondary">Regresar</a>
+                </div>
         <div class="row">
             <!-- Formulario a la izquierda -->
             <div class="col-md-6 mb-4">
-                <div class="text-start mt-4">
-                    <a href="../managmentNote.php" class="btn btn-secondary">Regresar</a>
-                </div>
+                
                 <h2 class="text-center">Registrar o actualizar nota</h2>
                 <p class="text-muted text-center">Aquí puedes registrar las notas de tus estudiantes.</p>
                 <form class="w-100" action="../../../controllers/RegisterNoteController.php" method="POST">

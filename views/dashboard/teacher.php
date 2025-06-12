@@ -24,7 +24,7 @@
 
   <div class="container py-5" style="max-width: 800px;">
     <div class="mb-4 text-center">
-      <h2 class="fw-bold">Bienvenido coordinador <?php echo $_SESSION["user"]; ?></h2>
+      <h2 class="fw-bold">Bienvenido docente <?php echo $_SESSION["user"]; ?></h2>
       <p class="text-muted">Aquí puedes gestionar todas las funcionalidades de tu rol</p>
     </div>
 

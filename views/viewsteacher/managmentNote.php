@@ -18,7 +18,7 @@
             <h3>Opciones disponibles:</h3>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <a href="managmentNote/registerNote.php" class="text-decoration-none">Registrar notas</a>
+                    <a href="managmentNote/registerNote.php" class="text-decoration-none">Gestión de notas</a>
                 </li>
             </ul>
 </body>
