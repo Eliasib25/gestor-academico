@@ -47,8 +47,8 @@ $grados = $Grade->searchAll();
                                     
                                     <td>
                                         <select name="journey" class="form-control" required>
-                                            <option value="morning" <?= $grado['journey'] === 'mañana' ? 'selected' : '' ?>>Mañana</option>
-                                            <option value="afternoon" <?= $grado['journey'] === 'tarde' ? 'selected' : '' ?>>Tarde</option>
+                                            <option value="mañana" <?= $grado['journey'] === 'mañana' ? 'selected' : '' ?>>Mañana</option>
+                                            <option value="tarde" <?= $grado['journey'] === 'tarde' ? 'selected' : '' ?>>Tarde</option>
                                         </select>
                                     </td>
                                     
